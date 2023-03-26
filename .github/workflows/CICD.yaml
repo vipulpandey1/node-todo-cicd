@@ -36,3 +36,4 @@ jobs:
             sudo docker rm  node-todo-cicd || true
             sudo docker run -d --name node-todo-cicd -p 8001:8000 my-nodeapp:$BUILD_NUMBER
             sudo docker system prune -a -f
+            kubectl create deploy firstone --image my-nodeapp:$BUILD_NUMBER
